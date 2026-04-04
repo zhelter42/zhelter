@@ -1,98 +1,165 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zhelter</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZHELTER</title>
 
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: #0b0b0b;
-      font-family: serif;
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
-
+<style>
+@font-face {
+    font-family: 'MasonChronicles';
+    src: url('MasonChronicles.ttf') format('truetype');
+}
     .container {
-      text-align: center;
-      width: 100%;
-      max-width: 400px;
-      padding: 20px;
-    }
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-    h1 {
-      color: red;
-      font-size: 42px;
-      margin-bottom: 20px;
-      letter-spacing: 4px;
-    }
+h1 {
+    font-size: clamp(32px, 8vw, 56px);
+    letter-spacing: clamp(6px, 2vw, 14px);
+    text-align: center;
+}
 
-    .qr {
-      width: 180px;
-      height: 180px;
-      margin: 20px auto;
-      display: block;
-    }
+.socials {
+    flex-direction: column;
+    gap: 15px;
+}
 
-    .links {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      margin-top: 20px;
-    }
+.donate a {
+    width: 80%;
+    text-align: center;
+}
 
-    .links a {
-      color: #ddd;
-      text-decoration: none;
-      font-size: 18px;
-      transition: 0.2s;
-    }
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'MasonChronicles', serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    padding: 20px;
 
-    .links a:hover {
-      color: white;
-    }
+    background:
+    radial-gradient(circle at center, rgba(255,255,255,0.04), transparent 60%),
+    linear-gradient(180deg, #000000 0%, #0a0a0a 100%),
+    url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+}
 
-    .donate {
-      margin-top: 25px;
-      padding: 15px 25px;
-      border-radius: 25px;
-      border: none;
-      background: yellow;
-      font-size: 16px;
-      cursor: pointer;
-      transition: 0.2s;
-    }
+/* ZHELTER — тонкий и четкий */
+h1 {
+    font-size: 56px;
+    letter-spacing: 14px;
+    color: #8B0000;
+    margin-bottom: 15px;
+    font-weight: 100;
+    opacity: 0.95;
+}
 
-    .donate:hover {
-      transform: scale(1.05);
-    }
-  </style>
+/* QR */
+#qrcode {
+    margin: 25px 0;
+    padding: 10px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(0,0,0,0.4);
+}
+
+/* Соцсети */
+.socials {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.socials a {
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 2px;
+    position: relative;
+    transition: 0.3s;
+}
+
+/* линия */
+.socials a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    width: 0%;
+    height: 1px;
+    background: #8B0000;
+    transition: 0.3s;
+    transform: translateX(-50%);
+}
+
+.socials a:hover {
+    color: #8B0000;
+    letter-spacing: 4px;
+}
+
+.socials a:hover::after {
+    width: 100%;
+}
+
+/* Донат */
+.donate {
+    margin-top: 40px;
+}
+
+.donate a {
+    text-decoration: none;
+    padding: 14px 40px;
+    border-radius: 40px;
+    font-size: 18px;
+    background: linear-gradient(45deg, #caa84c, gold);
+    color: black;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(255,215,0,0.3);
+}
+
+.donate a:hover {
+    box-shadow: 0 0 30px gold;
+    transform: scale(1.08);
+}
+</style>
 </head>
 
 <body>
 
-  <div class="container">
+<div class="container">
+<h1>ZHELTER</h1>
 
-    <h1>ZHELTER</h1>
+<div id="qrcode"></div>
 
-    <!-- ВСТАВЬ СЮДА СВОЙ QR -->
-    <img src="qr.png" class="qr">
+<div class="socials">
+    <a href="https://youtube.com/@zhelter42?si=pKZfIv1Gngo9NqTA" target="_blank">YOUTUBE</a>
+    <a href="https://www.instagram.com/zhelter42?igsh=MTh6YnVjbWZqdHdvNA%3D%3D&utm_source=qr" target="_blank">INSTAGRAM</a>
+    <a href="https://www.tiktok.com/@zhelter42?is_from_webapp=1&sender_device=pc" target="_blank">TIKTOK</a>
+    <a href="https://open.spotify.com/artist/013pDnXPSCKdJwK4zmIMHf?si=0wpC4CiCS1GruTvVMi5Gnw" target="_blank">SPOTIFY</a>
+</div>
 
-    <div class="links">
-      <a href="#">YOUTUBE</a>
-      <a href="#">INSTAGRAM</a>
-      <a href="#">TIKTOK</a>
-      <a href="#">SPOTIFY</a>
-    </div>
+<div class="donate">
+    <a href="https://dalink.to/zhelter42" target="_blank">Donation</a>
+</div>
 
-    <button class="donate">Donation</button>
+<script>
+new QRCode(document.getElementById("qrcode"), {
+    text: window.location.href,
+    width: 120,
+    height: 120,
+    colorDark: "#8B0000",
+    colorLight: "#000000"
+});
+</script>
 
-  </div>
-
+</div>
 </body>
 </html>
